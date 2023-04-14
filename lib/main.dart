@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const Challenge());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,27 +13,65 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                color: Colors.white,
-                width: 30,
-                child: const Text('Container 1'),
+              CircleAvatar(
+                radius: 50,
+                backgroundColor: Colors.red,
+                backgroundImage: AssetImage('images/profile.jpg'),
+              ),
+              Text(
+                'Javier Campos',
+                style: TextStyle(
+                    fontFamily: 'Pacifico',
+                    fontSize: 40,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                'FullStack Developer'.toUpperCase(),
+                style: TextStyle(
+                    fontFamily: 'Source Sans Pro',
+                    fontSize: 20,
+                    color: Colors.teal[100],
+                    letterSpacing: 2.5,
+                    fontWeight: FontWeight.bold),
               ),
               SizedBox(
-                width: 20,
+                height: 20,
+                width: 150,
+                child: Divider(color: Colors.teal[100]),
               ),
-              Container(
-                color: Colors.blue,
-                width: 30,
-                child: const Text('Container 2'),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                child: ListTile(
+                  leading: Icon(Icons.phone, color: Colors.teal),
+                  title: Text(
+                    '+56 9 84172008',
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.teal[900],
+                        fontFamily: 'Source Sans Pro'),
+                  ),
+                ),
               ),
-              Container(
-                color: Colors.red,
-                width: 30,
-                child: const Text('Container 3'),
-              ),
+              Card(
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.email,
+                      color: Colors.teal,
+                    ),
+                    title: Text(
+                      'j_campos.v@outlook.com',
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.teal[900],
+                          fontFamily: 'Source Sans Pro'),
+                    ),
+                  ))
             ],
           ),
         ),
